@@ -31,9 +31,11 @@ $films = new WP_Query($args);
 
                 <div class="list-items">
                     <div class="item">
-                        <div class="thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>"></div>
-                        <div class="info"><?php echo get_post_meta($film_id, 'tempo_video_min', true) ?>m</div>
-                        <div class="title"><?php echo get_the_title() ?></div>
+                        <a class="link-thumb" href="<?php echo the_permalink() ?>">
+                            <div class="thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>"></div>
+                            <div class="info"><?php echo get_post_meta($film_id, 'tempo_video_min', true) ?>m</div>
+                            <div class="title"><?php echo get_the_title() ?></div>
+                        </a>
                     </div>
 
 
