@@ -1,0 +1,61 @@
+
+.main-single{
+    background: black;
+    padding: 26px 0 100px 0;
+
+    @media all and (min-width:996px){
+        padding: 26px 0 100px 0;
+    }
+
+    h1, p, a{
+        color: white;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .info-single {
+        display: flex;
+        gap: 10px;
+    
+        .item {
+            
+            font-size: .9em;
+            padding: 3px 36px;
+            border: 1px solid white;
+            border-radius: 3px;
+            color: white;
+
+            @media all and (min-width: 996px){
+                font-size: 1.1em;
+            }
+    
+            &:first-child {
+                background: white;
+                color: black;
+            }
+        }
+    }
+
+    .container-thumb{
+        width: 100vw;
+        height: 250px;
+        background-size: cover!important;
+        background-position: top!important;
+        background-repeat: no-repeat!important;
+        text-align: center;
+        margin: 0 auto;
+
+        @media all and (min-width: 996px){
+            width: 80vw;
+            height: 920px;
+        }
+
+        .icon-play{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

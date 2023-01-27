@@ -3,7 +3,6 @@
 $args = [
     'post_type' => 'videos',
     'post_status' => 'publish',
-    'category_name' => 'filmes',
     'orderby' => 'date',
     'order' => 'DESC',
     'posts_per_page' => -1

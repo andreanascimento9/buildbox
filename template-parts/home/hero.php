@@ -22,7 +22,7 @@ $categories = get_the_category($destaque_id);
                     <div class="item"><?php echo $category->name; ?></div>
                 <?php endif; ?>
             <?php endforeach; ?>
-            <div class="item">130m</div>
+            <div class="item"><?php echo get_post_meta($film_id, 'tempo_video_min', true) ?>m</div>
         </div>
 
         <h1 class="hero-title"><?php echo get_the_title($destaque_id) ?></h1>

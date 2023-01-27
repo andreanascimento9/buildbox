@@ -13,26 +13,36 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<?php
-	while (have_posts()) :
-		the_post();
+	<section class="main-single">
+		<div class="container">
 
-		get_template_part('template-parts/content', get_post_type());
+			<?php
+			$single_id = get_the_ID();
+			$thumb =  get_the_post_thumbnail_url();
+			$categories = get_the_category();
+			?>
 
-		the_post_navigation(
-			array(
-				'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', '_s') . '</span> <span class="nav-title">%title</span>',
-				'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', '_s') . '</span> <span class="nav-title">%title</span>',
-			)
-		);
+			<div class="info-single">
+				<?php foreach ($categories as $category) : ?>
+					<?php if ($category->slug !== 'destaque') : ?>
+						<div class="item"><?php echo $category->name; ?></div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+				<div class="item"><?php echo get_post_meta($single_id, 'tempo_video_min', true) ?>m</div>
+			</div>
 
-		// If comments are open or we have at least one comment, load up the comment template.
-		if (comments_open() || get_comments_number()) :
-			comments_template();
-		endif;
+			<h1><?php echo get_the_title() ?></h1>
+		</div>
+		<a href="#">
+			<div class="container-thumb" style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_the_post_thumbnail_url() ?>)">
+				<img class="icon-play" src="<?php echo get_template_directory_uri() ?>/img/play-light.svg" alt="<?php echo get_the_title() ?>">
+			</div>
+		</a>
+		<div class="container">
+			<p><?php echo the_content() ?></p>
+		</div>
 
-	endwhile; // End of the loop.
-	?>
+	</section>
 
 </main><!-- #main -->
 
