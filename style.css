@@ -965,12 +965,14 @@ textarea {
 	color: white;
 	max-width: 100%;
 	line-height: 1em;
+	margin-bottom: 1em;
 }
 
 @media all and (min-width: 996px) {
 	.hero-section .hero-title {
-		max-width: 240px;
+		max-width: 65%;
 		font-size: 6.2em;
+		margin: 0.3em 0 0.5em 0;
 	}
 }
 
@@ -980,6 +982,54 @@ textarea {
 	padding: 19px 78px;
 	text-decoration: none;
 	border-radius: 3px;
+}
+
+/* categoriesHome
+--------------------------------------------- */
+.categories {
+	background: black;
+	color: white;
+	padding: 100px 0;
+}
+
+.categories h2 {
+	margin: 0 0 35px 0;
+	color: #FF0000;
+	font-size: 2.5em;
+}
+
+.categories .list-items {
+	display: flex;
+	gap: 30px;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+}
+
+.categories .list-items .item {
+	max-width: 387px;
+}
+
+.categories .list-items .item .thumb {
+	height: 387px;
+	width: 248px;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
+
+.categories .list-items .item .info {
+	border: 1px solid white;
+	padding: 3px 0;
+	max-width: 138px;
+	text-align: center;
+	border-radius: 3px;
+	margin: 25px 0 15px 0;
+}
+
+.categories .list-items .item .title {
+	font-size: 1.8em;
+	font-weight: bold;
+	max-width: 235px;
 }
 
 /*--------------------------------------------------------------

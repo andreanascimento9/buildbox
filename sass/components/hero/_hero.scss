@@ -33,10 +33,12 @@
         color: white;
         max-width: 100%;
         line-height: 1em;
+        margin-bottom: 1em;
         
         @media all and (min-width:996px) {
-            max-width: 240px;
+            max-width: 65%;
             font-size: 6.2em;
+            margin: 0.3em 0 0.5em 0;
         }
     }
 

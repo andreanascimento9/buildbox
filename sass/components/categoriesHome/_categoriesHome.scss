@@ -1,0 +1,46 @@
+.categories{
+    background: black;
+    color: white;
+    padding: 100px 0;
+
+    h2{
+        margin: 0 0 35px 0;
+        color: #FF0000;
+        font-size: 2.5em
+        
+    }
+
+    .list-items{
+        display: flex;
+        gap: 30px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        .item{
+            max-width: 387px;
+
+            .thumb{
+                height: 387px;
+                width: 248px;
+                background-position: center!important;
+                background-repeat: no-repeat!important;
+                background-size: cover!important;
+            }
+
+            .info{
+                border: 1px solid white;
+                padding: 3px 0;
+                max-width: 138px;
+                text-align: center;
+                border-radius: 3px;
+                margin: 25px 0 15px 0;
+            }
+
+            .title{
+                font-size: 1.8em;
+                font-weight: bold;
+                max-width: 235px;
+            }
+        }
+    }
+}

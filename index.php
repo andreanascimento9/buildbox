@@ -21,9 +21,7 @@ get_header();
 
 	<?php include get_template_directory() . '/template-parts/home/hero.php'; ?>
 
-	<div class="container">
-
-	</div>
+	<?php include get_template_directory() . '/template-parts/home/categories.php'; ?>
 
 
 </main><!-- #main -->
