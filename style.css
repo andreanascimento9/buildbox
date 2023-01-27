@@ -461,6 +461,10 @@ body {
 	overflow-x: hidden;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -993,7 +997,7 @@ textarea {
 }
 
 .categories h2 {
-	margin: 0 0 35px 0;
+	margin: 50px 0 35px 0;
 	color: #FF0000;
 	font-size: 2.5em;
 }
@@ -1003,10 +1007,17 @@ textarea {
 	gap: 30px;
 	flex-wrap: nowrap;
 	overflow-x: auto;
+	min-width: 100vw;
+	scroll-behavior: smooth;
+}
+
+.categories .list-items::-webkit-scrollbar {
+	display: none;
 }
 
 .categories .list-items .item {
 	max-width: 387px;
+	cursor: pointer;
 }
 
 .categories .list-items .item .thumb {
@@ -1030,6 +1041,23 @@ textarea {
 	font-size: 1.8em;
 	font-weight: bold;
 	max-width: 235px;
+}
+
+/* inputAdmin
+--------------------------------------------- */
+.play-inputs input {
+	background-color: #f9f9f9;
+	padding: 12px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	width: 100%;
+}
+
+.play-inputs label {
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 8px;
+	display: block;
 }
 
 /*--------------------------------------------------------------
