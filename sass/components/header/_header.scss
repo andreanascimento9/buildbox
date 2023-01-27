@@ -41,6 +41,12 @@
             gap: 50px;
             color: white;
             font-weight: bold;
+
+            .item {
+                a{
+                    color: white!important;
+                }
+            }
         }
     }
 

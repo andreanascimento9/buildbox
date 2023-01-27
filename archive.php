@@ -10,44 +10,81 @@
 
 
 get_header();
+$current_term = get_queried_object();
+
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary">
 
-	<?php if (have_posts()) : ?>
+	<section class="main-archive">
+		<div class="container">
+			<div class="flex">
 
-		<header class="page-header">
-			<?php
-			the_archive_title('<h1 class="page-title">', '</h1>');
-			the_archive_description('<div class="archive-description">', '</div>');
-			?>
-		</header><!-- .page-header -->
+				<?php if ($current_term && $current_term->taxonomy === 'category') :
 
-	<?php
-		/* Start the Loop */
-		while (have_posts()) :
-			the_post();
+					$actual_category = $current_term->name;
 
-			/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-			get_template_part('template-parts/content', get_post_type());
+				?>
+					<div class="col-left">
+						<h2><?php echo $current_term->name; ?></h2>
+						<div class="description">
+							<?php echo $current_term->description ?>
+						</div>
+					</div>
 
-		endwhile;
+					<div class="col-right">
+						<div class="list-items">
 
-		the_posts_navigation();
+							<?php
 
-	else :
+							$args = [
+								'post_type' => 'videos',
+								'post_status' => 'publish',
+								'category_name' => "$actual_category",
+								'orderby' => 'date',
+								'order' => 'DESC',
+								'posts_per_page' => -1
+							];
 
-		get_template_part('template-parts/content', 'none');
+							$archive = new WP_Query($args);
 
-	endif;
-	?>
+							if ($archive->have_posts()) :
+								while ($archive->have_posts()) : $archive->the_post();
+									$post_id_archive = get_the_ID();
 
+							?>
+
+									<div class="item">
+										<a class="link-thumb" href="<?php echo the_permalink() ?>">
+											<div class="thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>"></div>
+											<div class="info"><?php echo get_post_meta($post_id_archive, 'tempo_video_min', true) ?>m</div>
+											<div class="title"><?php echo get_the_title() ?></div>
+										</a>
+									</div>
+
+							<?php
+
+								endwhile;
+							endif;
+
+							wp_reset_postdata();
+
+							?>
+
+						</div>
+					</div>
+			</div>
+		</div>
+
+
+
+
+
+
+	<?php endif; ?>
+	</section>
 </main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();

@@ -6,7 +6,7 @@ $args = [
     'category_name' => 'filmes',
     'orderby' => 'date',
     'order' => 'DESC',
-    'posts_per_age' => -1
+    'posts_per_page' => -1
 ];
 
 $films = new WP_Query($args);

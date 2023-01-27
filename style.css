@@ -118,6 +118,8 @@ pre {
  */
 a {
 	background-color: transparent;
+	color: white;
+	text-decoration: none;
 }
 
 /**
@@ -911,6 +913,10 @@ textarea {
 	font-weight: bold;
 }
 
+.main-header .navigation-desktop .col-right .item a {
+	color: white !important;
+}
+
 /* footer
 --------------------------------------------- */
 .main-footer {
@@ -1048,6 +1054,112 @@ textarea {
 	max-width: 235px;
 }
 
+/* archive
+--------------------------------------------- */
+.main-archive {
+	background: black;
+	color: white;
+	padding: 50px 0 150px 0;
+}
+
+@media all and (min-width: 996px) {
+	.main-archive {
+		padding: 135px 0;
+	}
+}
+
+@media all and (min-width: 996px) {
+	.main-archive .flex {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.main-archive .flex .col-left h2 {
+	padding: 0 0 35px 0;
+	color: #FF0000;
+	font-size: 2.5em;
+	margin: 0;
+}
+
+.main-archive .flex .col-left .description {
+	font-size: 1.1em;
+	line-height: 1.8em;
+}
+
+@media all and (min-width: 996px) {
+	.main-archive .flex .col-left .description {
+		max-width: 665px;
+	}
+}
+
+.main-archive .flex .col-right .list-items {
+	display: flex;
+	gap: 19px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+@media all and (min-width: 996px) {
+	.main-archive .flex .col-right .list-items {
+		justify-content: end;
+		margin-top: 0;
+		gap: 30px;
+	}
+}
+
+.main-archive .flex .col-right .list-items .item {
+	max-width: 149px;
+	cursor: pointer;
+}
+
+@media all and (min-width: 996px) {
+	.main-archive .flex .col-right .list-items .item {
+		max-width: 248px;
+	}
+}
+
+.main-archive .flex .col-right .list-items .item a.link-thumb {
+	text-decoration: none;
+	color: white;
+}
+
+.main-archive .flex .col-right .list-items .item .thumb {
+	height: 232px;
+	width: 145px;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
+
+@media all and (min-width: 996px) {
+	.main-archive .flex .col-right .list-items .item .thumb {
+		width: 248px;
+		height: 387px;
+	}
+}
+
+.main-archive .flex .col-right .list-items .item .info {
+	border: 1px solid white;
+	padding: 3px 0;
+	max-width: 138px;
+	text-align: center;
+	border-radius: 3px;
+	margin: 25px 0 15px 0;
+}
+
+.main-archive .flex .col-right .list-items .item .title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+@media all and (min-width: 996px) {
+	.main-archive .flex .col-right .list-items .item .title {
+		font-size: 1.8em;
+	}
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1136,8 +1248,14 @@ textarea {
 
 .container {
 	margin: 0 auto;
-	max-width: 1480px;
-	padding: 0 20px;
+	max-width: 1920px;
+	padding: 0 30px;
+}
+
+@media all and (min-width: 996px) {
+	.container {
+		padding: 0 100px;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */

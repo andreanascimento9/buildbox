@@ -23,6 +23,17 @@
 	<?php wp_head(); ?>
 </head>
 
+<?php
+
+$categories_header = get_terms(array(
+	'taxonomy' => 'category',
+	'hide_empty' => true,
+	'object_types' => array('videos')
+));
+
+
+?>
+
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
@@ -42,9 +53,12 @@
 				</div>
 
 				<div class="col-right">
-					<div class="item">Filmes</div>
-					<div class="item">Documentários</div>
-					<div class="item">Séries</div>
+					<?php foreach ($categories_header as $category_header) : ?>
+						<?php if ($category_header->slug !== 'destaque' && $category_header->slug !== 'sem-categoria') : ?>
+							<div class="item"><a href="<?php echo site_url("/category/$category_header->slug/") ?>"><?php echo $category_header->name; ?></a></div>
+						<?php endif; ?>
+					<?php endforeach ?>
+
 				</div>
 			</nav>
 		</div>

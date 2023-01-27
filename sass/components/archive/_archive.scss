@@ -1,0 +1,97 @@
+.main-archive{
+    background: black;
+    color: white;
+    padding: 50px 0 150px 0;
+
+    @media all and (min-width:996px){
+        padding: 135px 0;
+    }
+
+    .flex{
+        @media all and (min-width:996px){
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .col-left{
+
+            h2{
+                padding: 0 0 35px 0;
+                color: #FF0000;
+                font-size: 2.5em;
+                margin: 0;
+            }
+        
+        
+            .description{
+                font-size: 1.1em;
+                line-height: 1.8em;
+
+                @media all and (min-width: 996px){
+                    max-width: 665px;
+                }
+            }
+        }
+
+        .col-right{
+            .list-items{
+                display: flex;
+                gap: 19px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 40px;
+
+                @media all and (min-width: 996px){
+                    justify-content: end;
+                    margin-top: 0;
+                    gap: 30px;
+                }
+        
+                .item{
+                    max-width: 149px;
+                    cursor: pointer;
+                    
+                    @media all and (min-width: 996px){
+                        max-width: 248px;
+                    }
+        
+                    a.link-thumb{
+                        text-decoration: none;
+                        color: white;
+                    }
+        
+                    .thumb{
+                        height: 232px;
+                        width: 145px;
+                        @media all and (min-width: 996px){
+                            width: 248px;
+                            height: 387px;
+                        }
+                        
+                        background-position: center!important;
+                        background-repeat: no-repeat!important;
+                        background-size: cover!important;
+                    }
+        
+                    .info{
+                        border: 1px solid white;
+                        padding: 3px 0;
+                        max-width: 138px;
+                        text-align: center;
+                        border-radius: 3px;
+                        margin: 25px 0 15px 0;
+                    }
+        
+                    .title{
+                        font-size: 1.5em;
+                        font-weight: bold;
+                        @media all and (min-width:996px){
+                            font-size: 1.8em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
