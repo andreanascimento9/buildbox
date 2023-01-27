@@ -1,0 +1,15 @@
+.main-footer{
+    background-color: #121212;
+    text-align: left;
+    padding: 72px 0px 120px 0px;
+    text-align: center;
+
+    @media all and (min-width: 768px){
+        padding: 100px 0px 120px 0px;
+        text-align: left;
+    }
+
+    .theme-copyright{
+        color: white;
+    }
+}

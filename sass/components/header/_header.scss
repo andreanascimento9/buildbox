@@ -1,0 +1,47 @@
+.main-header{
+    background: black;
+    padding: 20px 0;
+
+    @media all and (min-width: 996px){
+        padding: 30px 0;
+    }
+
+    .navigation-mobile{
+        text-align: center;
+
+        @media screen and (max-width:767px) {
+            display: block;
+        }
+
+        @media screen and (min-width:767px) {
+            display: none;
+        }
+
+        .site-logo-href{
+            text-decoration: none;
+        }
+        
+    }
+
+    .navigation-desktop{
+
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (min-width:768px) {
+            display: flex;
+        }
+
+        @media screen and (max-width:768px) {
+            display: none;
+        }
+
+        .col-right{
+            display: flex;
+            gap: 50px;
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+}
