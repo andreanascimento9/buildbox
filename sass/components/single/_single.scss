@@ -19,6 +19,15 @@
 
     a{
         text-decoration: none;
+
+        @media all and (min-width:996px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0 100px;
+        }
+
     }
 
     .info-single {
@@ -52,7 +61,7 @@
         border: none;
 
         @media all and (min-width: 996px){
-            width: 80vw;
+            width: 90vw;
             height: 920px;
         }
 
@@ -73,7 +82,7 @@
         margin: 0 auto;
 
         @media all and (min-width: 996px){
-            width: 80vw;
+            width: 90vw;
             height: 920px;
         }
 
