@@ -914,7 +914,11 @@ textarea {
 }
 
 .main-header .navigation-desktop .col-right .item a {
-	color: white !important;
+	color: white;
+}
+
+.main-header .navigation-desktop .col-right .item .text-red {
+	color: red;
 }
 
 /* footer
@@ -1169,7 +1173,13 @@ textarea {
 
 @media all and (min-width: 996px) {
 	.main-single {
-		padding: 26px 0 100px 0;
+		padding: 138px 0 122px 0;
+	}
+}
+
+@media all and (min-width: 996px) {
+	.main-single .container {
+		max-width: 1400px;
 	}
 }
 

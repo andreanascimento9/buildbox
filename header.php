@@ -32,6 +32,7 @@ $categories_header = get_terms(array(
 ));
 
 
+$current_term = get_queried_object();
 ?>
 
 <body <?php body_class(); ?>>
@@ -55,7 +56,14 @@ $categories_header = get_terms(array(
 				<div class="col-right">
 					<?php foreach ($categories_header as $category_header) : ?>
 						<?php if ($category_header->slug !== 'destaque' && $category_header->slug !== 'sem-categoria') : ?>
-							<div class="item"><a href="<?php echo site_url("/category/$category_header->slug/") ?>"><?php echo $category_header->name; ?></a></div>
+
+
+							<div class="item">
+								<a class="<?php if ($category_header->slug == $current_term->slug) {
+												echo "text-red";
+											} ?>" href="<?php echo site_url("/category/$category_header->slug/") ?>"><?php echo $category_header->name; ?></a>
+							</div>
+
 						<?php endif; ?>
 					<?php endforeach ?>
 

@@ -34,7 +34,7 @@ get_header();
 			<h1><?php echo get_the_title() ?></h1>
 		</div>
 		<a href="#">
-			<div class="container-thumb" style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo get_the_post_thumbnail_url() ?>)">
+			<div class="container-thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>)">
 				<img class="icon-play" src="<?php echo get_template_directory_uri() ?>/img/play-light.svg" alt="<?php echo get_the_title() ?>">
 			</div>
 		</a>

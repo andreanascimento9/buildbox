@@ -1,50 +1,48 @@
 <?php
 
-$args = [
-    'post_type' => 'videos',
-    'post_status' => 'publish',
-    'orderby' => 'date',
-    'order' => 'DESC',
-    'posts_per_page' => -1
-];
-
-$films = new WP_Query($args);
+$args = array(
+    'taxonomy' => 'category',
+    'hide_empty' => true,
+    'post_type' => 'videos'
+);
+$categories = get_categories($args);
 
 ?>
 
-
 <section class="categories">
 
-    <?php
-    if ($films->have_posts()) :
-        while ($films->have_posts()) : $films->the_post();
-            $film_id = get_the_ID();
-            $categories_films = get_the_category($film_id);
-    ?>
-            <div class="container">
-                <?php foreach ($categories_films as $category_film) : ?>
-                    <?php if ($category_film->slug !== 'destaque') : ?>
-                        <h2><?php echo $category_film->name; ?></h2>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+    <div class="container">
+        <?php
+        foreach ($categories as $category) :
+            if ($category->slug !== 'destaque' && $category->slug !== 'sem-categoria') :
 
-                <div class="list-items">
-                    <div class="item">
-                        <a class="link-thumb" href="<?php echo the_permalink() ?>">
-                            <div class="thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>"></div>
-                            <div class="info"><?php echo get_post_meta($film_id, 'tempo_video_min', true) ?>m</div>
-                            <div class="title"><?php echo get_the_title() ?></div>
-                        </a>
-                    </div>
+                echo '<h2>' . $category->name . '</h2>';
+                echo '<div class="list-items">';
 
+                $args = array(
+                    'post_type' => 'videos',
+                    'category_name' => $category->slug,
+                );
 
-                </div>
-            </div>
-
-    <?php
-        endwhile;
-    endif;
-    wp_reset_postdata();
-    ?>
-
+                $posts = new WP_Query($args);
+                if ($posts->have_posts()) :
+                    while ($posts->have_posts()) :
+                        $posts->the_post();
+        ?>
+                        <div class="item">
+                            <a class="link-thumb" href="<?php echo the_permalink() ?>">
+                                <div class="thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>"></div>
+                                <div class="info"><?php echo get_post_meta(get_the_ID(), 'tempo_video_min', true) ?>m</div>
+                                <div class="title"><?php echo get_the_title() ?></div>
+                            </a>
+                        </div>
+        <?php
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+                echo '</div>';
+            endif;
+        endforeach
+        ?>
+    </div>
 </section>

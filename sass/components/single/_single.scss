@@ -4,7 +4,13 @@
     padding: 26px 0 100px 0;
 
     @media all and (min-width:996px){
-        padding: 26px 0 100px 0;
+        padding: 138px 0 122px 0;
+    }
+
+    .container{
+        @media all and (min-width: 996px){
+            max-width: 1400px;
+        }
     }
 
     h1, p, a{
