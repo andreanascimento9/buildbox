@@ -71,3 +71,38 @@ $current_term = get_queried_object();
 			</nav>
 		</div>
 	</header><!-- #masthead -->
+
+	<header class="header-mobile">
+		<div class="container">
+			<nav class="nav-mobile">
+
+				<div class="col">
+					<a href="<?php echo site_url('/category/filmes') ?>">
+						<div class="icon">
+							<img src="<?php echo get_template_directory_uri() ?>/img/filmes.svg">
+						</div>
+						<div class="title">Filmes</div>
+					</a>
+				</div>
+
+				<div class="col">
+					<a href="<?php echo site_url('/category/documentarios') ?>">
+						<div class="icon">
+							<img src="<?php echo get_template_directory_uri() ?>/img/documentario.svg">
+						</div>
+						<div class="title">Documentarios</div>
+					</a>
+				</div>
+
+				<div class="col">
+					<a href="<?php echo site_url('/category/series') ?>">
+						<div class="icon">
+							<img src="<?php echo get_template_directory_uri() ?>/img/series.svg">
+						</div>
+						<div class="title">Séries</div>
+					</a>
+				</div>
+
+			</nav>
+		</div>
+	</header>

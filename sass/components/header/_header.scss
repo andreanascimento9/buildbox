@@ -56,3 +56,41 @@
     }
 
 }
+
+.header-mobile{
+    background: black;
+    color: white;
+    padding: 20px 0 30px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+    .container{
+        max-width: 768px;
+    }
+
+    .nav-mobile{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        gap: 55px;
+
+        .col{
+            text-align: center;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+            .title{
+                font-size: 9pt;
+            }
+        }
+    }
+
+}
+
+@media all and (min-width: 996px){
+    .header-mobile{
+        display: none;
+    }
+}
