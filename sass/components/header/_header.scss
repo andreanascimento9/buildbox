@@ -89,6 +89,19 @@
 
 }
 
+.text-red{
+   
+    svg{
+        path{
+            fill: red;
+        }
+    }
+    .title{
+
+    color: red;
+    }
+}
+
 @media all and (min-width: 996px){
     .header-mobile{
         display: none;

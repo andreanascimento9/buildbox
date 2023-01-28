@@ -77,27 +77,47 @@ $current_term = get_queried_object();
 			<nav class="nav-mobile">
 
 				<div class="col">
-					<a href="<?php echo site_url('/category/filmes') ?>">
+					<a href="<?php echo site_url('/category/filmes') ?>" class="<?php if ($current_term->slug == 'filmes') {
+																					echo 'text-red';
+																				} ?>">
 						<div class="icon">
-							<img src="<?php echo get_template_directory_uri() ?>/img/filmes.svg">
+							<?php
+							$svg_path = get_template_directory() . '/img/filmes.svg';
+							$svg = file_get_contents($svg_path);
+							echo $svg;
+							?>
 						</div>
-						<div class="title">Filmes</div>
+						<div class="title filmes">Filmes</div>
 					</a>
 				</div>
 
 				<div class="col">
-					<a href="<?php echo site_url('/category/documentarios') ?>">
+					<a href="<?php echo site_url('/category/documentarios') ?>" class="<?php if ($current_term->slug == 'documentarios') {
+																							echo 'text-red';
+																						} ?>">
 						<div class="icon">
-							<img src="<?php echo get_template_directory_uri() ?>/img/documentario.svg">
+							<?php
+							$svg_path = get_template_directory() . '/img/documentario.svg';
+							$svg = file_get_contents($svg_path);
+							echo $svg;
+							?>
 						</div>
-						<div class="title">Documentarios</div>
+						<div class="title documentarios">Documentarios</div>
 					</a>
 				</div>
 
 				<div class="col">
-					<a href="<?php echo site_url('/category/series') ?>">
+					<a class="<?php if ($current_term->slug == 'series') {
+									echo 'text-red';
+								} ?>" href="<?php echo site_url('/category/series') ?>">
 						<div class="icon">
-							<img src="<?php echo get_template_directory_uri() ?>/img/series.svg">
+
+							<?php
+							$svg_path = get_template_directory() . '/img/series.svg';
+							$svg = file_get_contents($svg_path);
+							echo $svg;
+							?>
+
 						</div>
 						<div class="title">Séries</div>
 					</a>

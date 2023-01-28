@@ -37,6 +37,11 @@ get_header();
 			<div class="container-thumb" style="background: url(<?php echo get_the_post_thumbnail_url() ?>)">
 				<img class="icon-play" src="<?php echo get_template_directory_uri() ?>/img/play-light.svg" alt="<?php echo get_the_title() ?>">
 			</div>
+			<div class="play-iframe">
+				<input type="hidden" value="<?php echo get_post_meta(get_the_ID(), 'url_video', true) ?>" class="url_iframe">
+				<iframe src="" allow="autoplay"></iframe>
+			</div>
+
 		</a>
 		<div class="container">
 			<p><?php echo the_content() ?></p>

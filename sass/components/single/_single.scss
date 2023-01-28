@@ -44,7 +44,26 @@
         }
     }
 
+    
+    iframe{
+
+        width: 100vw;
+        height: 250px;
+        border: none;
+
+        @media all and (min-width: 996px){
+            width: 80vw;
+            height: 920px;
+        }
+
+    }
+        
+    
+  
+
     .container-thumb{
+        position: absolute;
+        z-index: 2;
         width: 100vw;
         height: 250px;
         background-size: cover!important;

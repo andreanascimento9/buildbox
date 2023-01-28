@@ -954,6 +954,14 @@ textarea {
 	font-size: 9pt;
 }
 
+.text-red svg path {
+	fill: red;
+}
+
+.text-red .title {
+	color: red;
+}
+
 @media all and (min-width: 996px) {
 	.header-mobile {
 		display: none;
@@ -1260,7 +1268,22 @@ textarea {
 	color: black;
 }
 
+.main-single iframe {
+	width: 100vw;
+	height: 250px;
+	border: none;
+}
+
+@media all and (min-width: 996px) {
+	.main-single iframe {
+		width: 80vw;
+		height: 920px;
+	}
+}
+
 .main-single .container-thumb {
+	position: absolute;
+	z-index: 2;
 	width: 100vw;
 	height: 250px;
 	background-size: cover !important;
