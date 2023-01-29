@@ -3,7 +3,10 @@
 $args = array(
     'taxonomy' => 'category',
     'hide_empty' => true,
-    'post_type' => 'videos'
+    'post_type' => 'videos',
+    'post_per_page' => -1,
+    'orderby'   => 'date',
+    'order' => 'DESC',
 );
 $categories = get_categories($args);
 
